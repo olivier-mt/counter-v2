@@ -1,4 +1,5 @@
 const Counter = ({ counter, setCounter }) => {
+  console.log("counter ===>", counter);
   const handleMinus = () => {
     return setCounter(counter - 1);
   };

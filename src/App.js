@@ -3,8 +3,10 @@ import { useState } from "react";
 import Counter from "./Components/Counter";
 
 function App() {
-  const [countersNumber, setCounterNumber] = useState([0, 0]);
-  const [counter, setCounter] = useState(0);
+  const [countersNumber, setCounterNumber] = useState([]);
+  const [counter0, setCounter0] = useState(0);
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
 
   const handleOnclick = () => {
     const newCounterNumber = [...countersNumber];
@@ -21,7 +23,13 @@ function App() {
     <div>
       <button onClick={handleOnclick}>Add counter</button>
       {countersNumber.map((elem, index) => {
-        tab.push(<Counter counter={counter} setCounter={setCounter} />);
+        if ((index = 0)) {
+          tab.push(<Counter counter={counter0} setCounter={setCounter0} />);
+        } else if ((index = 1)) {
+          tab.push(<Counter counter={counter1} setCounter={setCounter1} />);
+        } else if ((index = 2)) {
+          tab.push(<Counter counter={counter2} setCounter={setCounter2} />);
+        }
       })}
       {tab}
     </div>
